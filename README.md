@@ -11,9 +11,11 @@ headlessly. This image is compiled into a [Windows resource](https://en.wikipedi
 
 Free Pascal has built-in cross-platform support for programmatically accessing Windows
 resources. The source code in ```embedded-cli``` implements FFI to Pharo's shared library
-```libPharoVMCore```, routines to access the the Pharo image Windows resource as callbacks from
+```libPharoVMCore```, routines to access the the Pharo image Windows resource for callback from
 ```libPharoVMCore```, and a driver program. When run, the compiled driver program puts up an SDL
 window where it is possible to draw with the mouse.
+
+![Example running on Ubuntu](/doc/img/embedded-linux.png)
 
 ## How To Build
 
