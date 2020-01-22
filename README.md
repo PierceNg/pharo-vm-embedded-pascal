@@ -15,7 +15,7 @@ resources. The source code in ```embedded-cli``` implements FFI to Pharo's share
 ```libPharoVMCore```, and a driver program. When run, the compiled driver program puts up an SDL
 window where it is possible to draw with the mouse.
 
-![Example running on Ubuntu](/doc/img/embedded-linux.png)
+![Example running on Ubuntu](/doc/img/embedded-linux.png =612x287)
 
 ## How To Build
 
