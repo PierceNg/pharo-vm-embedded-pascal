@@ -13,6 +13,8 @@ type
   sqImageFile = pointer;
   sqInt = clong;
 
+procedure setResourceID(rID: integer);
+function getResourceID: integer;
 function embeddedImageFileClose(f: pointer): sqInt; cdecl;
 function embeddedImageFileOpen(fileName: pchar; mode: pchar): sqImageFile; cdecl;
 function embeddedImageFilePosition(f: sqImageFile): cint32; cdecl;
@@ -25,7 +27,23 @@ function embeddedImageFileExists(const aPath: ppchar): cint; cdecl;
 implementation
 
 var
+  resourceID: integer = -1;
   imageStream: TResourceStream;
+
+procedure setResourceID(rID: integer);
+begin
+    resourceID := rID;
+end;
+
+function getResourceID: integer;
+begin
+    exit(resourceID);
+end;
+
+function badResourceID: boolean;
+begin
+    exit(resourceID <= 0);
+end;
 
 function badImageFile(f: sqImageFile): boolean;
 begin
@@ -43,7 +61,9 @@ end;
 (* EXPORT(sqImageFile) embeddedImageFileOpen(char* fileName, char *mode) *)
 function embeddedImageFileOpen(fileName: pchar; mode: pchar): sqImageFile; cdecl;
 begin
-     imageStream := TResourceStream.createFromID(HInstance, 300, RT_RCDATA);
+     if badResourceID then
+         exit(nil);
+     imageStream := TResourceStream.createFromID(HInstance, resourceID, RT_RCDATA);
      exit(imageStream.memory);
 end;
 
