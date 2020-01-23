@@ -1,7 +1,7 @@
 program runPharoEmbedded;
 
 {$mode objfpc}{$H+}
-{$R resources.res}
+{$R resources.res} { <= compiler directive to incorporate resources.res }
 {$linklib m}
 
 uses
@@ -48,6 +48,9 @@ begin
   embeddedFileHandler.imageFileWrite := pointer(@embeddedImageFileWrite);
   embeddedFileHandler.imageFileExists := pointer(@embeddedImageFileExists);
   setFileAccessHandler(@embeddedFileHandler);
+
+  { Tell the embedded image handler our resource ID. }
+  setResourceID(300);
 
   { Go Pharo! }
   vm_main(5, ppchar(@processArgv[0]), ppchar(@envp[0]));
