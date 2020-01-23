@@ -156,7 +156,7 @@ Linux Otrus 4.15.0-74-generic #84-Ubuntu SMP Thu Dec 19 08:06:28 UTC 2019 x86_64
 lala
 ```
 
-![runPharoEmbedded](https://github.com/PierceNg/doc/img/embedded-linux.png)
+![runPharoEmbedded](https://raw.githubusercontent.com/PierceNg/pharo-vm-embedded-pascal/master/doc/img/embedded-linux.png)
 
 Ta da! "lala" is printed by Pharo.
 
