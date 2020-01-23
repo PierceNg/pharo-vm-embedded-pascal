@@ -4,6 +4,8 @@ This repository demonstrates embedding [Pharo](http://pharo.org) inside host pro
 [Free Pascal](https://www.freepascal.org). It is inspired by Pablo Tesone's [C
 example](https://github.com/tesonep/pharo-vm-embedded-example).
 
+Embedding Pharo in Pascal takes advantage of Pascal's cross-platform portability.
+
 ## How It Works
 
 The application Pharo image is as per Pablo's repository, running SDL2AthensDrawingExample
