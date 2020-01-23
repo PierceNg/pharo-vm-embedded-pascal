@@ -125,9 +125,8 @@ Linking runPharoEmbedded
 
 Much of the size of the executable is due to the embedded ```Pharo.image```.
 
-We'll run ```runPharoEmbedded``` in the headless VM build directory because Pharo's
-baked-in library lookup currently requires this. (More on this in a later post.) So move the
-program over.
+We'll run ```runPharoEmbedded``` in the headless VM build directory because Pharo's baked-in
+library lookup currently requires this. So move the program over.
 
 ```
 % mv runPharoEmbedded ~/src/st/opensmalltalk-vm-pharo/build/vm
