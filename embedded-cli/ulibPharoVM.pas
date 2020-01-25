@@ -35,6 +35,10 @@ const
         {$else}
             dySoDLL = 'libPharoVMCore.so';
         {$endif}
+    {$else}
+        {$ifdef windows}
+            dySoDLL = 'PharoVMCore.dll';
+        {$endif}
     {$endif}
 
 function vm_main(ac: cint; const av: ppchar; const ev: ppchar): cint; cdecl; external dySoDLL;

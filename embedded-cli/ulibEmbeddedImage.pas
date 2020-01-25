@@ -7,7 +7,10 @@ unit ulibEmbeddedImage;
 interface
 
 uses
-  ctypes, baseunix, classes;
+  ctypes, 
+  {$ifdef unix}baseunix,{$endif}
+  {$ifdef windows}windows,{$endif}
+  classes;
 
 type
   sqImageFile = pointer;
